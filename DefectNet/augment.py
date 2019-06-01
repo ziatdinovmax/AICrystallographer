@@ -52,10 +52,10 @@ class cropper:
         Returns a batch of cropped images and
         a batch of corresponding labels (ground truth)
         """
-        X_batch = np.empty((0, self.window_size[0], self.window_size[1], self.image.shape[2]))
-        y_batch = np.empty((0, self.window_size[0], self.window_size[1], self.mask.shape[2]))
+        X_batch = np.empty((0, self.window_size[0], self.window_size[1]))
+        y_batch = np.empty((0, self.window_size[0], self.window_size[1]))
         for window in self.sliding_window():
-            if window[0].shape != self.window_size:
+            if window[0].shape[: -1] != self.window_size:
                 continue
             window_i = np.transpose(window[0], [2, 0, 1])
             window_l = np.transpose(window[1], [2, 0, 1])
