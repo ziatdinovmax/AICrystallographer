@@ -1,4 +1,0 @@
-image:
-  file: gcr.io/deeplearning-platform-release/pytorch-cpu.1-1
-ports:
-  - port: 8080
