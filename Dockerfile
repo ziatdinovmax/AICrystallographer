@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM gitpod/workspace-full:latest
 
 RUN  pip3 install numpy scipy matplotlib scikit-image scikit-learn \
      opencv-python h5py pandas jupyterlab \
