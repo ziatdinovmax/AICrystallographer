@@ -13,6 +13,7 @@ RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+RUN rm /boot/grub/menu.lst 
 RUN apt-get update && yes | apt-get install docker-ce docker-ce-cli containerd.io
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 #USER root
