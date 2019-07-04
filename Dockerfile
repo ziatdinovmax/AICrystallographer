@@ -13,7 +13,7 @@ RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-RUN apt-get update && apt-get --assume-yes install docker-ce docker-ce-cli containerd.io
+RUN apt-get update && yes | apt-get install docker-ce docker-ce-cli containerd.io
 #USER root
 #RUN  python3 -m pip install numpy scipy matplotlib scikit-image scikit-learn opencv-python h5py pandas jupyterlab \
 #     https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl \
